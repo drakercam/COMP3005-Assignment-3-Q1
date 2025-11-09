@@ -4,7 +4,7 @@ Cameron Drake - 101325027
 
 # Application Design Details
 - This application interacts with the PostgreSQL database to demonstrate and perform CRUD operations.
-- It is written in Python utilizing the 'pyscopg2' library to connect to the PostgresSQL database.
+- It is written in Python utilizing the 'pyscopg2' library to connect to the PostgreSQL database.
 
 # Setup Instructions
 - Ensure that PostgreSQL is installed and running on your machine.
