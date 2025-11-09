@@ -1,0 +1,37 @@
+# Steps to reset the database and user, also acts as steps to create the user and database
+
+sudo systemctl stop postgresql
+
+sudo systemctl start postgresql
+
+sudo -u postgres psql
+
+DROP DATABASE IF EXISTS studentdb;
+
+DROP ROLE IF EXISTS assignment_user;
+
+CREATE USER assignment_user WITH PASSWORD 'assignment_password';
+
+CREATE DATABASE studentdb OWNER assignment_user;
+
+GRANT ALL PRIVILEGES ON DATABASE studentdb TO assignment_user;
+
+\q
+
+sudo -u postgres psql -d studentdb -f db/schema.sql
+
+sudo -u postgres psql -d studentdb
+
+\dt
+
+SELECT * FROM students;
+
+GRANT ALL PRIVILEGES ON TABLE students TO assignment_user;
+
+ALTER TABLE students OWNER TO assignment_user;
+
+\dt
+
+\q
+
+# From here, you can navigate to the /app folder and run with python3 main.py

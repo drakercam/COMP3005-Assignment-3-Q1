@@ -56,8 +56,8 @@ def main():
 
     connection = psycopg2.connect(
         dbname = "studentdb",
-        user = "postgres",
-        password = "password",
+        user = "assignment_user",
+        password = "assignment_password",
         host = "localhost",
         port = "5432"
     )
